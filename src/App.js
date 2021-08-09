@@ -8,9 +8,6 @@ import About from './components/About'
 
 function App() {
 
-  const [ user, setUser ] = useState(null)
-  const [ password, setPassword] = useState(null)
-  const [ email, setEmail ] = useState(null)
   const [ showAddTask, setShowAddTask ] = useState(false)
   const [ tasks, setTasks ] = useState([])
 
@@ -25,6 +22,8 @@ function App() {
   const fetchTasks = async () => {
     const res = await fetch('https://my-json-server.typicode.com/ethanshealey/react-todo/tasks')
     const data = await res.json()
+
+    console.log(data)
 
     return data
   }
