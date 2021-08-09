@@ -23,20 +23,20 @@ function App() {
   }, [])
 
   const fetchTasks = async () => {
-    const res = await fetch('http://localhost:5000/tasks')
+    const res = await fetch('https://my-json-server.typicode.com/ethanshealey/react-todo/tasks')
     const data = await res.json()
 
     return data
   }
 
   const fetchTask = async id => {
-    const res = await fetch(`http://localhost:5000/tasks/${id}`)
+    const res = await fetch(`https://my-json-server.typicode.com/ethanshealey/react-todo/tasks/${id}`)
     const data = await res.json()
     return data
   }
 
   const addTask = async task => {
-    const res = await fetch('http://localhost:5000/tasks', { 
+    const res = await fetch('https://my-json-server.typicode.com/ethanshealey/react-todo/tasks', { 
       method: 'POST', 
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(task)
@@ -52,7 +52,7 @@ function App() {
 
     const updateTask = { ...task, reminder: !task.reminder}
 
-    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+    const res = await fetch(`https://my-json-server.typicode.com/ethanshealey/react-todo/tasks/${id}`, {
       method: 'PUT', 
       headers: {
         'Content-type': 'application/json',
@@ -69,7 +69,7 @@ function App() {
   }
 
   const deleteTask = async id => {
-    await fetch(`http://localhost:5000/tasks/${id}`, { 
+    await fetch(`https://my-json-server.typicode.com/ethanshealey/react-todo/tasks/${id}`, { 
       method: 'DELETE'
     })
 
